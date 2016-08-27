@@ -18,6 +18,5 @@ for x in range(0, length):
     else:
         wjEntranceQueue.append(wjPatrons[x])
 # --END Validate Age
-print
-"Allowed to enter: " + str(wjEntranceQueue) + "\n"
+
 
