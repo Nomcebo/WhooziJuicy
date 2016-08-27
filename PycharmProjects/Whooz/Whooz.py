@@ -18,3 +18,26 @@ for x in range(0, length):
     else:
         wjEntranceQueue.append(wjPatrons[x])
 # --END Validate Age
+
+
+# --START bubble sorting -- Descending to age
+
+isSorted = False
+length = len(wjEntranceQueue) - 1
+
+# if two ages are exactly the same example G32 and I32, G32 must be first
+
+# Asuming letter depicts order you arrived sort alphabetically first
+wjEntranceQueue.sort()
+# then sorting by age descending [1:] -- bubble sorting
+while not isSorted:
+    isSorted = True
+    for x in range(0, length):
+        if wjEntranceQueue[x][1:] < wjEntranceQueue[x + 1][1:]:
+            isSorted = False  # when two ages in the wrong order is found
+            temp = wjEntranceQueue[x + 1]
+            wjEntranceQueue[x + 1] = wjEntranceQueue[x]
+            wjEntranceQueue[x] = temp
+# --END bubble sorting
+print("Order to enter: " + str(wjEntranceQueue) + "\n")
+
